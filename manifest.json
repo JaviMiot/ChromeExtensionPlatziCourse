@@ -3,6 +3,7 @@
   "description": "Get information about Platzi course",
   "version": "1.0",
   "manifest_version": 3,
+  "permissions": ["storage", "activeTab", "scripting"],
   "action": {
     "default_title": "Click Me",
     "default_popup": "getDataCourse.html",
@@ -13,5 +14,10 @@
       "128": "./images/platzi128.png"
     }
   },
-  "permissions": ["storage", "activeTab", "scripting"]
+  "icons": {
+    "16": "./images/platzi16.png",
+    "32": "./images/platzi32.png",
+    "48": "./images/platzi48.png",
+    "128": "./images/platzi128.png"
+  }
 }

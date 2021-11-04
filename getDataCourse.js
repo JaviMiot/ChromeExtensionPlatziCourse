@@ -38,10 +38,27 @@ function getDataCourse() {
     url: courseUrl,
     subTitles: courseSubtitlesArray,
   };
-  //console.log(data);
 
   return data;
 }
+
+const updateDataPopUp = (data) => {
+  dataCourse = data;
+  let subtitleArray = [];
+  imgForm.src = data.image;
+  title.value = data.title;
+  urlImage.value = data.image;
+  teacherName.value = data.teacherName;
+  urlCourse.value = data.url;
+
+  resultsOfInjection.subTitles.forEach((element) => {
+    let subtitle = document.createElement('li');
+    subtitle.innerText = element;
+    subtitleArray.push(subtitle);
+  });
+
+  subtitlesContainer.append(...subtitleArray);
+};
 
 btnGetData.addEventListener('click', async () => {
   let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
@@ -52,28 +69,13 @@ btnGetData.addEventListener('click', async () => {
       function: getDataCourse,
     },
     (injectionResults) => {
-      dataCourse = injectionResults[0].result;
-      let subtitleArray = [];
-      imgForm.src = injectionResults[0].result.image;
-      title.value = injectionResults[0].result.title;
-      urlImage.value = injectionResults[0].result.image;
-      teacherName.value = injectionResults[0].result.teacherName;
-      urlCourse.value = injectionResults[0].result.url;
-
-      injectionResults[0].result.subTitles.forEach((element) => {
-        let subtitle = document.createElement('li');
-        subtitle.innerText = element;
-        subtitleArray.push(subtitle);
-      });
-
-      subtitlesContainer.append(...subtitleArray);
+      resultsOfInjection = injectionResults[0].result;
+      updateDataPopUp(resultsOfInjection);
     }
   );
 });
 
 const btnsCopyArray = Array.from(btnsCopy);
-
-console.log(btnsCopyArray);
 
 btnsCopyArray.map((btnCopy) => {
   btnCopy.addEventListener('click', (event) => {
