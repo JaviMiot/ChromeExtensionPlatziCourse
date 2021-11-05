@@ -1,0 +1,39 @@
+{
+  "parent": {
+    "database_id": "{database-id}"
+  },
+  "icon": {
+    "type": "external",
+    "external": {
+      "url": "https://static.platzi.com/media/avatars/Platzi-f730e65b-e92b-44d3-81c0-5c59c4dc4658.png"
+    }
+  },
+  "properties": {
+    "Status": {
+      "select": {
+        "name": "En Proceso"
+      }
+    },
+    "Profesor": {
+      "multi_select": [
+        {
+          "name": "Santiago Camargo nuevo"
+        }
+      ]
+    },
+    "link": {
+      "url": "https://ejemplo/"
+    },
+
+    "Nombre del curso": {
+      "title": [
+        {
+          "type": "text",
+          "text": {
+            "content": "titulo ejemplo"
+          }
+        }
+      ]
+    }
+  }
+}
