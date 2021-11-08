@@ -21,7 +21,7 @@
     </header>
 
     <main>
-        <button class='btn-getData' id='btn-getData'>Get Data</button>
+        <button class='btn-principal btn-getData' id='btn-getData'>Get Data</button>
 
         <picture>
             <img class='imageCourse' id='imageCourse'
@@ -59,15 +59,19 @@
                 </div>
             </label>
             <ul class="suttitles-container" id="suttitles-container">
+                <h1 class="suttitle-title">Temas del Curso</h1>
                 <button type="button" id="btn-copy-subtitle" class='btn-copy btn-copy-subtitle'></button>
             </ul>
         </form>
+        <button disabled id='btn-createPage' class="btn-principal btn-createPage">Generate Page</button>
+        <a class="urlCourse-Link" id='urlCourse-Link' href='' target="_blank" rel="noopener noreferrer">Url Course</a>
     </main>
+
     <footer>
         <p>Made with ❤️ by <a href="https://twitter.com/JaviM_iot">JaviM_iot</a> </p>
     </footer>
-
-    <script src="./getDataCourse.js"></script>
+    <script src="./utils/notion.js"></script>
+    <script src="./js/getDataCourse.js"></script>
 </body>
 
 </html>
