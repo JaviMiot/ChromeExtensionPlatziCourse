@@ -1,6 +1,7 @@
 const btnGetData = document.querySelector('#btn-getData');
 const btnsCopy = document.querySelectorAll('#btn-copy');
-const btnsCopySubtitle = document.querySelector('#btn-copy-subtitle');
+const btnCopySubtitle = document.querySelector('#btn-copy-subtitle');
+const btnCreatePage = document.querySelector('#btn-createPage');
 
 const imgForm = document.querySelector('#imageCourse');
 const title = document.querySelector('#title');
@@ -58,6 +59,8 @@ const updateDataPopUp = (data) => {
   });
 
   subtitlesContainer.append(...subtitleArray);
+  btnCreatePage.disabled = false;
+  subtitlesContainer.style.display = 'Block';
 };
 
 btnGetData.addEventListener('click', async () => {
@@ -86,6 +89,33 @@ btnsCopyArray.map((btnCopy) => {
   });
 });
 
-btnsCopySubtitle.addEventListener('click', (event) => {
+btnCopySubtitle.addEventListener('click', (event) => {
   navigator.clipboard.writeText(dataCourse.subTitles);
+});
+
+const createPage = () => {
+  chrome.storage.sync.get(['databaseId', 'notionkey'], async (items) => {
+    const auth = {
+      databaseId: items.databaseId,
+      notionKey: items.notionkey,
+    };
+
+    const data = await createNotionPage(dataCourse, auth);
+
+    if (!data.message) {
+      const urlCourse = document.getElementById('urlCourse-Link');
+      urlCourse.href = data.url;
+      urlCourse.style.opacity = 1;
+    } else {
+      const errorMessage = document.createElement('p');
+      errorMessage.innerText = data.message;
+      errorMessage.classList.add('error-message');
+      const main = document.querySelector('main');
+      main.append(errorMessage);
+    }
+  });
+};
+
+btnCreatePage.addEventListener('click', () => {
+  createPage();
 });

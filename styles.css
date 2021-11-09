@@ -41,11 +41,9 @@ main {
   padding: 0 16px;
 }
 
-.btn-getData {
+.btn-principal {
   background-color: #98ca3f;
   outline: none;
-  width: 100px;
-  height: 25px;
   border-radius: 5px;
   font-size: 1.2rem;
   color: #fff;
@@ -55,8 +53,25 @@ main {
   margin-bottom: 4px;
 }
 
+.btn-getData {
+  width: 100px;
+  height: 25px;
+}
+
+.btn-createPage {
+  width: 200px;
+  height: 25px;
+  margin-bottom: 16px;
+}
+
+.btn-createPage:hover,
 .btn-getData:hover {
   background-color: hsl(82, 69%, 42%);
+}
+
+.btn-createPage:disabled {
+  background-color: hsla(83, 46%, 19%, 0.384);
+  cursor: default;
 }
 
 picture .imageCourse {
@@ -102,11 +117,11 @@ input {
   box-shadow: 1px 1px 2px rgba(36, 36, 36, 0.1);
 }
 
-input::-moz-selection{
+input::-moz-selection {
   background-color: hsl(82, 37%, 59%);
 }
 
-input::selection{
+input::selection {
   background-color: hsl(82, 37%, 59%);
 }
 
@@ -129,6 +144,7 @@ input::selection{
 
 .suttitles-container {
   position: relative;
+  display: none;
   width: 100%;
   list-style: none;
   margin-top: 16px;
@@ -139,21 +155,40 @@ input::selection{
 }
 
 .suttitles-container li {
-    font-size: 1.4rem;
+  font-size: 1.4rem;
 }
 
 .suttitles-container li::before {
-    content: '✔ ';
+  content: '✔ ';
+}
+
+.suttitle-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 4px;
+  border-bottom: 2px solid #fff;
+  margin-bottom: 8px;
 }
 
 .btn-copy-subtitle {
-    background-color: transparent;
-    position: absolute;
-    bottom: 3px;
-    right: 5px;
+  background-color: transparent;
+  position: absolute;
+  bottom: 3px;
+  right: 5px;
 }
-.btn-copy-subtitle:hover{
-    background-color: rgb(147, 199, 121);
+.btn-copy-subtitle:hover {
+  background-color: rgb(147, 199, 121);
+}
+
+main .urlCourse-Link {
+  opacity: 0;
+  font-size: 1.6rem;
+  text-decoration: none;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: hsl(82, 69%, 42%);
 }
 
 footer {
@@ -171,4 +206,13 @@ footer a {
   color: rgb(45, 144, 249);
   text-decoration: none;
   font-weight: 500;
+}
+
+.error-message {
+  font-size: 1.4rem;
+  background-color: rgb(192, 50, 50);
+  border-radius: 4px;
+  padding: 15px 10px;
+  color: #fff;
+  margin-bottom: 16px;
 }
