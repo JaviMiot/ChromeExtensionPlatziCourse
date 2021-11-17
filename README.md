@@ -64,7 +64,7 @@ Se procede a instalar de forma local el plugin.
 Para tener disponible en tu explorador hacer clic en el icono de extensiones y habilitar le extensión.
 ![activar plugin](https://i.imgur.com/aPMOnmn.png)
 
-##Configurar plugin
+## Configurar plugin
 1. Hacer clic sobre el icono del plugin y seleccionar "options"
 ![options](https://i.imgur.com/sIjinjC.png)
 2. En donde nos mostrará una pantalla donde colocaremos el **Token de Notion** y el **Id de la base de datos** que lo obtuvimos anteriormente
