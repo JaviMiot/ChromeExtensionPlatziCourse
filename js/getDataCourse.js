@@ -93,6 +93,12 @@ btnCopySubtitle.addEventListener('click', (event) => {
   navigator.clipboard.writeText(dataCourse.subTitles);
 });
 
+const showLoader = (display) => {
+  const loader = document.getElementById('loader-container');
+  loader.style.display = display;
+};
+
+
 const createPage = () => {
   chrome.storage.sync.get(['databaseId', 'notionkey'], async (items) => {
     const auth = {
@@ -113,9 +119,12 @@ const createPage = () => {
       const main = document.querySelector('main');
       main.append(errorMessage);
     }
+    showLoader('none');
   });
 };
 
+
 btnCreatePage.addEventListener('click', () => {
+  showLoader('block');
   createPage();
 });
