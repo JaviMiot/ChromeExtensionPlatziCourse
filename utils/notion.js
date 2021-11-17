@@ -24,7 +24,7 @@ const generatePageNotion = (data, { notionKey, databaseId }) => {
             },
           ],
         },
-        link: {
+        'Link del Curso': {
           url: data.url,
         },
         'Nombre del curso': {
