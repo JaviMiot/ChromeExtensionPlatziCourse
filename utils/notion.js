@@ -14,7 +14,7 @@ const generatePageNotion = (data, { notionKey, databaseId }) => {
       properties: {
         Status: {
           select: {
-            name: 'En Proceso',
+            name: 'En proceso',
           },
         },
         Profesor: {
