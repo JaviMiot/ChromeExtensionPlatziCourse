@@ -58,6 +58,7 @@ Se procede a instalar de forma local el plugin.
 3. Clic en el botón "Load unpacked" y selecciona el directorio de la extensión.
 ![DEVELOPER](https://wd.imgix.net/image/BhuKGJaIeLNPW9ehns59NfwqKxF2/vOu7iPbaapkALed96rzN.png?auto=format&w=571)
 4. Finalmente tendras instalada la extensión.
+
 ![plugin instalada](https://i.imgur.com/nToFFcx.png)
 
 ## Mostrar Plugin
@@ -66,11 +67,13 @@ Para tener disponible en tu explorador hacer clic en el icono de extensiones y h
 
 ## Configurar plugin
 1. Hacer clic sobre el icono del plugin y seleccionar "options"
+
 ![options](https://i.imgur.com/sIjinjC.png)
 2. En donde nos mostrará una pantalla donde colocaremos el **Token de Notion** y el **Id de la base de datos** que lo obtuvimos anteriormente
+
 ![tokens](https://i.imgur.com/8vxPLfg.png)
 
-##Craer tu primer Curso
+## Crear tu primer Curso
 ---
 Si haz seguido todos los paso podras ir a tu curso favorito de platzi y este se generar en tu notion.
 1. Acceder al plugin 
