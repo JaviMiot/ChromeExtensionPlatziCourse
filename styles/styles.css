@@ -130,7 +130,7 @@ input::selection {
 .btn-copy {
   width: 20px;
   height: 20px;
-  background-image: url('./icons/copy.png');
+  background-image: url('../icons/copy.png');
   background-position: center;
   background-size: contain;
   border: none;
