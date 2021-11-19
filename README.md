@@ -9,7 +9,7 @@
 
 _Acerca del Proyecto_
 Plugin de Google Chrome para crear una base de datos en Notion apartir de un curso de la plataforma de Platzi.
-## Instalalación🚀
+## Instalación🚀
 
 _Clonar el proyecto._
 ```
