@@ -9,24 +9,25 @@ const urlImage = document.querySelector('#urlImage');
 const teacherName = document.querySelector('#teacherName');
 const urlCourse = document.querySelector('#urlCourse');
 
+const config = ConfigPrincipalPage;
+
 const subtitlesContainer = document.querySelector('#suttitles-container');
 let dataCourse = {};
 
-function getDataCourse() {
-  let courseImg = document.querySelector('.CourseDetail-left-figure')
-    .firstElementChild.src;
+function getDataCourse(config) {
+  let courseImg = document.querySelector(config.imgCourseRef).src;
 
   let courseTitle = document
-    .querySelector('.CourseDetail-left-title')
-    .innerText.substring(11);
+    .querySelector(config.titleCourseRef)
+    .innerText.substring(config.digitToCutTitle);
 
   let courseUrl = document.location.href;
 
   let courseTeacherName = document.querySelector(
-    '.TeacherList-full-name'
+    config.teacherNameRef
   ).innerText;
 
-  let courseSubtitles = document.querySelectorAll('.Material-title');
+  let courseSubtitles = document.querySelectorAll(config.subtitlesRef);
 
   let courseSubtitlesArray = Array.from(courseSubtitles).map(
     (title) => title.innerText
@@ -70,6 +71,7 @@ btnGetData.addEventListener('click', async () => {
     {
       target: { tabId: tab.id },
       function: getDataCourse,
+      args: [config]
     },
     (injectionResults) => {
       resultsOfInjection = injectionResults[0].result;
